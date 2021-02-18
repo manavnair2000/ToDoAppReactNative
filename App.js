@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{ useState }  from 'react';
-import { StyleSheet, View, FlatList, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, View, FlatList, Keyboard, TouchableWithoutFeedback,Alert } from 'react-native';
 import Header from './components/Header';
 import AddToDo from './components/AddToDo';
 import Item from './components/Items';
@@ -11,6 +11,13 @@ export default function App() {
     { text: 'play on the switch', key: '3' }
   ]);
   const addItem = (val) =>{
+    if (val.length < 3)
+    {
+      Alert.alert('Whoopsy!','You have entered an insignificant ToDo Item.',[
+        {text:'Understood', onPress: ()=>{ console.log('Hello');}}
+      ]);
+      return;
+    }
     return modToDoItem([ 
       {text: val, key:Math.random().toString()},
       ...toDoItem
