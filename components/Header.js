@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 export default function Header() {
 
     return(
@@ -14,6 +13,8 @@ const styles = StyleSheet.create({
     header:{
         backgroundColor: '#fa0',
         padding:28,
+        borderBottomEndRadius : 20,
+        borderBottomStartRadius: 20,
     },
     headerText:{
         color:'#fff',
